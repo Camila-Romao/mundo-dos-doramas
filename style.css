@@ -1,0 +1,321 @@
+/* Resete geral de margens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Empurra a logo para a esquerda e as redes para a direita */
+    align-items: center;            /* Alinha todos os elementos no centro verticalmente */
+    padding: 10px 30px;
+    background-color: rgb(196, 100, 205);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.redes-sociais img {
+    width: 28px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.redes-sociais img:hover {
+    transform: scale(1.15); /* Aumenta levemente ao passar o mouse */
+}
+
+/* Espaçamento interno entre os ícones das redes sociais */
+.redes-sociais {
+    display: flex;
+    gap: 15px; /* Define o espaço entre um ícone e outro */
+}
+
+.logotipo {
+    width: 45px;          /* Mantém um tamanho delicado e proporcional */
+    height: auto;         /* Garante que a imagem não fique esticada ou achatada */
+    border-radius: 50%;   /* Deixa a logo redondinha (se for formato circular) */
+    transition: transform 0.3s ease; /* Prepara para a animação ao passar o mouse */
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse por cima da logo */
+.logotipo:hover {
+    transform: scale(1.08); /* Aumenta levemente a logo de forma elegante */
+}
+
+nav img {
+    width: 20px; /* Tamanho delicado e proporcional */
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+nav img:hover {
+    transform: scale(1.1);
+}
+
+/* Animação das Pétalas de Cerejeira */
+.chuva-cerejeira {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.petala {
+    position: absolute;
+    top: -10px;
+    background-color: #ffb7c5;
+    border-radius: 150% 0 150% 0;
+    animation: cair linear infinite;
+    opacity: 0.8;
+}
+
+.petala:nth-child(1) { left: 10%; width: 15px; height: 10px; animation-duration: 5s; animation-delay: 0s; }
+.petala:nth-child(2) { left: 30%; width: 20px; height: 12px; animation-duration: 7s; animation-delay: 2s; }
+.petala:nth-child(3) { left: 50%; width: 12px; height: 8px;  animation-duration: 4s; animation-delay: 1s; }
+.petala:nth-child(4) { left: 70%; width: 18px; height: 10px; animation-duration: 6s; animation-delay: 3s; }
+.petala:nth-child(5) { left: 90%; width: 14px; height: 9px;  animation-duration: 0.5s; }
+
+@keyframes cair {
+    0% {
+        transform: translateY(-10vh) rotate(0deg) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(85vh) rotate(360deg) translateX(50px);
+        opacity: 0.2;
+    }
+}
+
+/* Banner do topo com efeito Parallax */
+.banner-topo {
+    width: 100%;
+    height: 70vh;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/das-cinzas-ao-trono-img.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.conteudo-banner h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+}
+
+.conteudo-banner p {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Seções de Texto e Apresentação */
+/* Título Principal */
+h1 {
+    text-align: center;
+    color: #5e3370;
+    margin: 40px 20px 20px;
+    font-size: 2rem;
+}
+
+/* Seção Início: Imagem ao lado do texto */
+.inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Garante que no celular o texto vá para baixo da imagem automaticamente! */
+}
+
+.inicio img {
+    width: 100%;
+    max-width: 420px; /* Tamanho limite para a imagem não ficar gigante */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.inicio div {
+    max-width: 480px;
+}
+
+.inicio h2 {
+    color: #9477ac;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.lista-motivos {
+    list-style: none; /* Remove as bolinhas padrão da lista */
+    padding: 0;
+    margin-top: 15px;
+}
+
+.lista-motivos li {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px; /* Espaço entre cada tópico */
+    position: relative;
+    padding-left: 25px; /* Espaço para o ícone customizado */
+}
+
+/* Adiciona um coração fofo antes de cada tópico */
+.lista-motivos li::before {
+    content: "💜";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.9rem;
+}
+
+.lista-motivos strong {
+    color: #5e3370; /* Cor de destaque no título de cada tópico */
+}
+
+/* Seção Meio */
+.meio {
+    text-align: center;
+    background-color: #faf6fc;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+}
+
+.meio h2 {
+    color: #5e3370;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.meio img {
+    width: 80px; /* Tamanho delicado para o coração de dedos */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.meio img:hover {
+    transform: scale(1.2) rotate(5deg); /* Efeito interativo fofo ao passar o mouse */
+}
+
+.meio img {
+    width: 60px;
+    height: 60px;
+}
+
+/* Seção de Doramas Indicados (Cards) */
+.fim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.card-dorama {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.card-dorama img {
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-resenha {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: rgb(171, 114, 224);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-resenha:hover {
+    background-color: rgb(145, 90, 195);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2b1f33; /* Tom escuro elegante que combina com o lilás */
+    color: #e0d0ea;
+    font-size: 0.9rem;
+}
+
+.secao-youtube {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #9477ac;
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:  15px; /* Espaçamento uniforme entre título, texto e botão */
+}
+
+.secao-youtube h3 {
+    font-size: 1.5rem;
+}
+
+.secao-youtube p {
+    max-width: 700px; /* Impede que o texto fique largo demais na tela */
+}
+
+/* Estilo do Botão */
+.btn-youtube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre o logo e o texto */
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Tamanho do logo dentro do botão */
+.btn-youtube img {
+    width: 28px;
+    height: auto;
+}
+
+.btn-youtube:hover {
+    transform: scale(1.05);
+    background-color: #fff0f5;
+}
+
