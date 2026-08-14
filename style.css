@@ -1,48 +1,101 @@
-/* ============================================== */
-/* 1. RESETE GERAL E FONTES                      */
-/* ============================================== */
+/* ==================== CONFIGURAÇÕES GERAIS ==================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* ==================== ANIMAÇÃO DAS PÉTALAS (SAKURA) ==================== */
+#petalas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite clicar nos cards mesmo com pétalas caindo */
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.petala {
+    position: absolute;
+    top: -20px;
+    background: radial-gradient(circle, #fbcfe8 30%, #f472b6 100%);
+    border-radius: 15px 0 15px 0; /* Formato de pétala delicada */
+    opacity: 0.8;
+    animation: cairLinear linear forwards;
+    filter: drop-shadow(0 2px 4px rgba(236, 72, 153, 0.3));
+}
+
+@keyframes cairLinear {
+    0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg) translateX(50px);
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg) translateX(-30px);
+        opacity: 0;
+    }
+}
+
+/* ==================== TAGS DOS PAÍSES ==================== */
+.tag-pais {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 8px;
     font-family: "Poppins", sans-serif;
 }
 
-/* ============================================== */
-/* 2. CABEÇALHO E NAVEGAÇÃO                       */
-/* ============================================== */
+.coreia { background-color: #e0f2fe; color: #0369a1; } /* Azul suave */
+.china  { background-color: #fef2f2; color: #b91c1c; } /* Vermelho suave */
+.japao  { background-color: #fdf2f8; color: #be185d; } /* Rosa suave */
+
+/* ==================== LOGO & CABEÇALHO ==================== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background-color: rgb(196, 100, 205);
-    backdrop-filter: blur(5px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding: 15px 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logotipo {
-    width: 45px;
-    height: auto;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: transform 0.2s ease;
 }
 
 .logotipo:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
+/* ==================== REDES SOCIAIS & BOTÃO ==================== */
 .redes-sociais {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: 15px;
 }
 
 .redes-sociais img {
     width: 28px;
-    height: auto;
+    height: 28px;
+    object-fit: contain;
     transition: transform 0.2s ease;
 }
 
@@ -50,343 +103,137 @@ header {
     transform: scale(1.15);
 }
 
-/* nova pagina doramaflix */
-.link-camilaflix {
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: #a855f7; /* Roxo fofo */
-    padding: 6px 14px;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    transition: transform 0.2s ease;
-}
-
-.link-camilaflix:hover {
-    transform: scale(1.05);
-    background-color: #915ac3;
-}
-
-/* ============================================== */
-/* 3. ANIMAÇÃO CHUVA DE CEREJEIRA                 */
-/* ============================================== */
-.chuva-cerejeira {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80vh;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.petala {
-    position: absolute;
-    top: -10px;
-    background-color: #ffb7c5;
-    border-radius: 150% 0 150% 0;
-    animation: cair linear infinite;
-    opacity: 0.8;
-}
-
-.petala:nth-child(1) { left: 10%; width: 15px; height: 10px; animation-duration: 5s; animation-delay: 0s; }
-.petala:nth-child(2) { left: 30%; width: 20px; height: 12px; animation-duration: 7s; animation-delay: 2s; }
-.petala:nth-child(3) { left: 50%; width: 12px; height: 8px;  animation-duration: 4s; animation-delay: 1s; }
-.petala:nth-child(4) { left: 70%; width: 18px; height: 10px; animation-duration: 6s; animation-delay: 3s; }
-.petala:nth-child(5) { left: 90%; width: 14px; height: 9px;  animation-duration: 0.5s; }
-
-@keyframes cair {
-    0% {
-        transform: translateY(-10vh) rotate(0deg) translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(85vh) rotate(360deg) translateX(50px);
-        opacity: 0.2;
-    }
-}
-
-/* ============================================== */
-/* 4. BANNER DO TOPO                              */
-/* ============================================== */
-.banner-topo {
-    width: 100%;
-    height: 70vh;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/das-cinzas-ao-trono-img.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ffffff;
-}
-
-.conteudo-banner h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-}
-
-.conteudo-banner p {
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-/* ============================================== */
-/* 5. SEÇÕES DE TEXTO E APRESENTAÇÃO              */
-/* ============================================== */
-h1 {
-    text-align: center;
-    color: #5e3370;
-    margin: 40px 20px 20px;
-    font-size: 2rem;
-}
-
-.inicio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto 50px auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-}
-
-.inicio div {
-    max-width: 480px;
-}
-
-.inicio h2 {
-    color: #9477ac;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.lista-motivos {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-
-.lista-motivos li {
-    color: #444;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 25px;
-}
-
-.lista-motivos li::before {
-    content: "💜";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 0.9rem;
-}
-
-.lista-motivos strong {
-    color: #5e3370;
-}
-
-/* Seção Meio */
-.meio {
-    text-align: center;
-    background-color: #faf6fc;
-    padding: 40px 20px;
-    margin-bottom: 40px;
-}
-
-.meio h2 {
-    color: #5e3370;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-}
-
-.meio img {
-    width: 60px;
-    height: 60px;
-    transition: transform 0.3s ease;
-}
-
-.meio img:hover {
-    transform: scale(1.2) rotate(5deg);
-}
-
-/* ============================================== */
-/* 6. CARD DO DORAMA EM DESTAQUE                 */
-/* ============================================== */
-.card-dorama {
-    max-width: 480px;            /* Define a largura do card no meio da tela */
-    margin: 30px auto;           /* Centraliza perfeitamente o card */
-    padding: 25px;
-    background-color: #ffffff;   /* Fundo branco */
-    border-radius: 20px;         /* Cantos arredondados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombrinha suave */
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.card-dorama img {
-    width: 100%;                 /* A imagem ocupa a largura inteira da caixinha */
-    height: auto;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.card-dorama h3 {
-    font-size: 1.3rem;
-    color: #5e3370;
-    margin-bottom: 15px;
-}
-
-.btn-resenha {
+/* Botão Início Estilizado */
+.btn-inicio {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 40px;
+    gap: 6px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 18px;
     border-radius: 20px;
-    color: #ffffff;
-    background-color: rgb(171, 114, 224);
-    border: none;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    margin-bottom: 15px;
-}
-
-.btn-resenha:hover {
-    background-color: rgb(145, 90, 195);
-    transform: scale(1.05);
-}
-
-.resenha-caixa {
-    margin: 10px 0 20px 0;
-    padding: 15px;
-    background-color: #fff0f3;
-    border-radius: 12px;
-    text-align: left;
-    width: 100%;
-}
-
-.resenha-caixa p {
-    color: #444;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.link-youtube {
-    display: inline-block;
-    margin-top: 10px;
-    color: #ff4757;
-    font-weight: bold;
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
+    transition: all 0.3s ease;
+    margin-right: 8px;
 }
 
-.link-youtube:hover {
-    text-decoration: underline;
+.btn-inicio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
+    background: linear-gradient(135deg, #9333ea, #db2777);
 }
 
-/* Container do Botão de Curtir */
-.favoritos-container {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.btn-inicio:active {
+    transform: translateY(0);
+}
+
+/* ==================== TÍTULO DA PÁGINA ==================== */
+.titulo-chamativo {
     text-align: center;
+    margin: 40px 0 20px 0;
+    padding: 0 15px;
 }
 
-.favoritos-container button {
-    width: 70px;
-    height: 70px;
-    background-color: #ffb7c5;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    transition: transform 0.2s ease;
+.titulo-chamativo h2 {
+    font-size: 2rem;
+    color: #a855f7;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(168, 85, 247, 0.15);
 }
 
-.favoritos-container button:hover {
-    transform: scale(1.1);
-}
-
-.favoritos-container p {
-    margin-top: 8px;
-    font-weight: bold;
-    color: #5e3370;
-}
-
-/* ============================================== */
-/* 7. SEÇÃO YOUTUBE                               */
-/* ============================================== */
-.secao-youtube {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #9477ac;
-    color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.secao-youtube h3 {
-    font-size: 1.5rem;
-}
-
-.secao-youtube p {
-    max-width: 700px;
-}
-
-.btn-youtube {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: #ffffff;
-    color: #333;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
+.titulo-chamativo p {
+    color: #6b7280;
     font-size: 1rem;
-    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* ==================== GRADE DE CARDS (GRID) ==================== */
+
+.grid-doramaflix {
+  display: grid;
+  /* Cria 3 colunas de tamanhos iguais para telas normais */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsivo para celular: só vira 1 coluna em telas bem pequenas! */
+@media (max-width: 768px) {
+  .grid-doramaflix {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== CARDS DE DORAMA ==================== */
+.card-dorama {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: all 0.3s ease;
+    
+    /* Cards visíveis por padrão */
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    filter: none !important;
+    visibility: visible !important;
 }
 
-.btn-youtube img {
-    width: 28px;
-    height: auto;
+/* Efeito Hover Bonito quando passa o mouse */
+.card-dorama:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 16px 32px rgba(168, 85, 247, 0.25); 
 }
 
-.btn-youtube:hover {
-    transform: scale(1.05);
-    background-color: #fff0f5;
+/* Imagem Padronizada */
+.card-dorama img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-bottom: 2px solid #f3f4f6;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* ============================================== */
-/* 8. RODAPÉ                                      */
-/* ============================================== */
-footer {
-    text-align: center;
+/* Conteúdo Interno do Card */
+.card-info {
     padding: 20px;
-    background-color: #2b1f33;
-    color: #e0d0ea;
+}
+
+.card-info h3 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin: 6px 0;
+}
+
+.genero {
+    display: block;
+    font-size: 0.82rem;
+    color: #ec4899;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.card-info p {
     font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.onde-assistir {
+    font-size: 0.88rem !important;
+    color: #1f2937 !important;
+    background-color: #f3f4f6;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
 }
