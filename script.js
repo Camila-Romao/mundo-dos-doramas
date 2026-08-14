@@ -1,72 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
 
-    // ==============================================
-    // 1. RESENHA DO DORAMA 1
-    // ==============================================
-    const btnResenha1 = document.getElementById("btn-resenha1");
-    const textoResenha1 = document.getElementById("resenha-texto1");
-
-    if (btnResenha1 && textoResenha1) {
-        btnResenha1.addEventListener("click", function() {
-            if (textoResenha1.style.display === "none" || textoResenha1.style.display === "") {
-                textoResenha1.style.display = "block"; // Abre a caixa
-                btnResenha1.innerText = "✖ Fechar Resenha"; // Muda o texto do botão
-            } else {
-                textoResenha1.style.display = "none"; // Esconde a caixa
-                btnResenha1.innerText = "📖 Ler Resenha"; // Volta o texto original
+    // Configura o observador para detectar a rolagem da tela
+    const observador = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Se o card apareceu na tela enquanto a gente desce
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revelado');
             }
         });
-    }
+    }, {
+        threshold: 0.15 // Revela quando 15% do card aparecer na tela
+    });
 
-    // ==============================================
-    // 2. BOTÃO DO YOUTUBE
-    // ==============================================
-    const btnYoutube = document.getElementById('btnYoutube');
+    // Seleciona todos os cards de dorama para aplicar o efeito
+    document.querySelectorAll('.card-dorama').forEach((card) => {
+        observador.observe(card);
+    });
 
-    if (btnYoutube) {
-        btnYoutube.addEventListener('click', () => {
-            const urlCanal = 'https://www.youtube.com/@camiladorameira'; 
-            window.open(urlCanal, '_blank');
-        });
-    }
+// Script das Pétalas Caindo //
+    function criarPetala() {
+            const container = document.getElementById('petalas-container');
+            const petala = document.createElement('div');
+            petala.classList.add('petala');
+            
+            // Tamanho e posição horizontal aleatórios
+            const tamanho = Math.random() * 12 + 10; // entre 10px e 22px
+            petala.style.width = `${tamanho}px`;
+            petala.style.height = `${tamanho}px`;
+            petala.style.left = `${Math.random() * 100}vw`;
+            
+            // Duração e velocidade do vôo
+            const duracao = Math.random() * 5 + 6; // entre 6s e 11s
+            petala.style.animationDuration = `${duracao}s`;
+            
+            container.appendChild(petala);
 
-    // ==============================================
-    // 3. CONTADORES DE CURTIDAS
-    // ==============================================
-    
-    // Dorama 1
-    const botao1 = document.getElementById("btn-curtir1");
-    const numeroContador1 = document.getElementById("contador1");
-    let curtidas1 = 0;
+            // Remove a pétala após a animação acabar para não sobrecarregar
+            setTimeout(() => {
+                petala.remove();
+            }, duracao * 1000);
+        }
 
-    if (botao1 && numeroContador1) {
-        botao1.addEventListener("click", function() {
-            curtidas1++; // Forma simplificada de somar +1
-            numeroContador1.innerText = curtidas1;
-        });
-    }
-
-    // Dorama 2
-    const botao2 = document.getElementById("btn-curtir2");
-    const numeroContador2 = document.getElementById("contador2");
-    let curtidas2 = 0;
-
-    if (botao2 && numeroContador2) {
-        botao2.addEventListener("click", function() {
-            curtidas2++; // Forma simplificada de somar +1
-            numeroContador2.innerText = curtidas2;
-        });
-    }
-
-});
-
-// ==============================================
-// 4. EFEITO DE SCROLL (OPCIONAL / EXEMPLO)
-// ==============================================
-// Se você for usar animação de scroll no futuro, defina a função aqui:
-function verificarScroll() {
-    // Código para verificar itens ao rolar a tela (se for usar)
-}
-
-// Ouve o evento de rolagem da página
-window.addEventListener('scroll', verificarScroll);
+        // Gera pétalas continuamente a cada 300ms
+        setInterval(criarPetala, 300);

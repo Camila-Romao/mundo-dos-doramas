@@ -1,126 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <title>Doramas: paixão sem limites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Recomendo - Camilaflix</title>
 </head>
-
 <body>
-    <!-- Animação das Pétalas no Topo -->
-    <div class="chuva-cerejeira">
-        <div class="petala"></div>
-        <div class="petala"></div>
-        <div class="petala"></div>
-        <div class="petala"></div>
-        <div class="petala"></div>
-    </div>
 
-    <!-- 1. Cabeçalho e Redes Sociais -->
-    <header> 
-        <!-- Item da Esquerda -->
-        <img class="logotipo" src="assets/Cah-dorameira-logo.png" alt="Logo Camila Dorameira">
+    <!-- Container das Pétalas de Cerejeira -->
+    <div id="petalas-container"></div>
 
-        <!-- Item da Direita -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img class="logotipo" src="assets/Cah-dorameira-logo.png" alt="Logo Camila Dorameira">
+            </a>
+        </div>
+        
         <nav class="redes-sociais">
+            <!-- Botão de Início estilizado -->
+            <a href="https://camila-romao.github.io/mundo-dos-doramas/" class="btn-inicio">
+                <span>🏠</span> Início
+            </a>
+
+            <!-- Suas Redes Sociais -->
             <a href="https://www.instagram.com/camiladorameiraa/" target="_blank"><img src="assets/Instagram_icon.png" alt="Instagram"></a>
             <a href="https://www.tiktok.com/@camiladorameiraa" target="_blank"><img src="assets/Tiktok_logo.png" alt="TikTok"></a>
             <a href="https://www.youtube.com/@Camiladorameira" target="_blank"><img src="assets/Youtube_logo.png" alt="YouTube"></a>
         </nav>
     </header>
 
-    <!-- 2. BANNER PRINCIPAL -->
-    <section class="banner-topo">
-        <div class="conteudo-banner">
-            <h1>Mundo dos Doramas</h1>
-            <p>As melhores indicações e resenhas em um só lugar</p>
-        </div>
+    <section class="titulo-chamativo">
+        <h2>🔥 Se ainda não assistiu, precisa assistir!</h2>
+        <p>As melhores indicações reunidas para maratonar agora mesmo.</p>
     </section>
 
-    <!-- 3. CONTEÚDO PRINCIPAL DO SITE -->
-    <main>
+    <!-- Grid onde ficam os seus doramas -->
+    <main class="grid-doramaflix">
 
-        <!-- Seção Informativa -->
-        <h1>Por que você precisa conhecer os doramas?</h1>
-
-        <section class="inicio">
-            <div>
-                <h2>Aqui os motivos</h2>
-                <ul class="lista-motivos">
-                    <li><strong>Histórias e personagens inesquecíveis:</strong> Enredos envolventes que te fazem rir, chorar e refletir sobre a vida de um jeito leve e profundo.</li>
-                    <li><strong>Personagens Marcantes:</strong> Conexões reais sobre amizade, superação, respeito e amores que realmente aquecem o coração.</li>
-                    <li><strong>Imersão Cultural:</strong> Uma viagem fascinante pela cultura, culinária e costumes asiáticos sem sair de casa.</li>
-                    <li><strong>Sem Espaço para o Tédio:</strong> Do suspense de tirar o fôlego até a comédia romântica mais fofa, existe um dorama para cada momento.</li>
-                    <li><strong>O Aviso Amigo:</strong> Falo por experiência própria... depois que você dá o primeiro <em>play</em>, <strong>não tem mais volta!</strong> 🍿✨</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Seção Meio -->
-        <section class="meio">
-            <h2>Vem conferir mais doramas que garanto que vai gostar!</h2>
-            <img src="assets/mao-coração-img.png" alt="Símbolo do dorama, coração feito com os dedos">
-        </section>
-
-        <!-- CARD DO DORAMA -->
+        <!-- Exemplo Card Coreano 1 -->
         <div class="card-dorama">
-            <img src="assets/assustadoramente-apaixonados-img.webp" alt="Capa do Dorama">
-            <h3>Assustadoramente apaixonado</h3>
-
-            <!-- 1. Botão que abre/fecha a resenha -->
-            <button id="btn-resenha1" class="btn-resenha">📖 Ler Resenha</button>
-
-            <!-- 2. A Resenha (escondida no começo) -->
-            <div id="resenha-texto1" class="resenha-caixa" style="display: none;">
-                <p>
-                  "Uma jovem que vê fantasmas não pode nem dar um aperto de mão, mas acaba conhecendo seu provável novo amor. Além de viver esse romance, ela precisará enfrentar e desvendar a causa de ver esses espíritos. Muito mistério, sustos e um romance que eu tenho certeza que você vai amar!"
-                </p>
-                <a href="https://youtu.be/K_ebwmICMH4?si=bSskff55IDdflfY1" target="_blank" class="link-youtube">
-                  🍿 Quer ver minha opinião completa? Assista ao vídeo no YouTube!
-                </a>
-            </div>
-
-            <!-- 3. Botão de Curtir -->
-            <div class="favoritos-container">
-                <button id="btn-curtir1">❤️</button>
-                <p>Curtidas: <span id="contador1">0</span></p>
+            <img src="assets/hong-a-infiltrada-img.webp" alt="Hong a infiltrada">
+            <div class="card-info">
+                <span class="tag-pais coreia">🇰🇷 Coreia do Sul</span>
+                <h3>Hong a Infiltrada</h3>
+                <span class="genero">Investigação • Comédia • Drama</span>
+                <p>Uma mulher na casa dos trinta assume a difícil missão de se passar por estagiária para descobrir quem está por trás de um esquema de caixa dois. Uma história cheia de momentos emocionantes e super divertidos que você vai amar!</p>
+                <p class="onde-assistir">📺 <strong>Onde assistir:</strong> Netflix</p>
             </div>
         </div>
+
+        <!-- Exemplo Card Coreano 2 -->
+        <div class="card-dorama">
+            <img src="assets/SUPERtontos-img.jpg" alt="supertontos">
+            <div class="card-info">
+                <span class="tag-pais coreia">🇰🇷 Coreia do Sul</span>
+                <h3>Os supertontos</h3>
+                <span class="genero">Fantasia • Comédia • Romance</span>
+                <p>Depois de um sequestro mal planejado e mega atrapalhado. Uma jovem e seus amigos acabam ganhando dons especiais, super poderes. So que com grandes poderes, vem grandes responsabilidades, num é? Agora precisaram se unir para combater uma turma de vilões com muita comedia e o romance quentinho, que voce vai amar!</p>
+                <p class="onde-assistir">📺 <strong>Onde assistir:</strong> Netflix</p>
+            </div>
+        </div> 
+
+        <!-- Exemplo Card Chinês 1 -->
+        <div class="card-dorama">
+            <img src="assets/amor-entre-a-fada-e-o-demonio-img.jpg" alt="Amor entre fada e o demonio">
+            <div class="card-info">
+                <span class="tag-pais china">🇨🇳 China</span>
+                <h3>Amor entre fada e o demonio</h3>
+                <span class="genero">Fantasia • Romance</span>
+                <p>Uma jovem fada acaba ficando presa a um temido demônio após tentar salvar seu amor. Agora a danada ficará ligada a ele e, juntos, viverão cenas divertidas e super emocionantes! Lutando para tentar retornar ao seu reino, ela acaba se conectando cada vez mais com o vilão — e o demônio, nada bobo, vai ficar caindinho por ela!</p>
+                <p class="onde-assistir">📺 <strong>Onde assistir:</strong> Netflix e Viki</p>
+            </div>
+        </div>
+
+        <!-- Exemplo Card Chinês 2 -->
+        <div class="card-dorama">
+            <img src="assets/das_cinzas_ao_trono_img.jpg" alt="Das cinzas ao trono">
+            <div class="card-info">
+                <span class="tag-pais china">🇨🇳 China</span>
+                <h3>Das cinzas ao trono</h3>
+                <span class="genero">Misterio • Ação • Romance • Fantasia</span>
+                <p>Depois de escolhas erradas e de ter um fim trágico, nossa protagonista terá a chance de voltar no tempo, se vingar do ex bosta e ainda ser recompensada com um lindo romance — conquistando corações e pelotões!</p>
+                <p class="onde-assistir">📺 <strong>Onde assistir:</strong> Netflix e Viki</p>
+            </div>
+        </div> 
+
+        <!-- Exemplo Card Japonês -->
+        <div class="card-dorama">
+            <img src="assets/Um-olhar-para-se-apaixonar-img.jpg" alt="Um olhar para se apaixonar">
+            <div class="card-info">
+                <span class="tag-pais japao">🇯🇵 Japão</span>
+                <h3>Um olhar para se apaixonar</h3>
+                <span class="genero">Romance • Comédia • Fantasia • Drama</span>
+                <p>Uma jovem que vive só do trabalho para casa tem sua rotina totalmente transformada após fazer um pedido no delivery. Por conseguir ouvir os pensamentos das pessoas, ela vive isolada e com medo — até conhecer alguém com quem vai vivenciar momentos fofos e apaixonantes que vão aquecer seu coração!</p>
+                <p class="onde-assistir">📺 <strong>Onde assistir:</strong> Netflix e Viki</p>
+            </div>
+        </div> 
+
+        <div class="card-dorama">
+            <img src="assets/meu-secretario-perfeito-img.webp" alt="Meu secretario perfeito">
+            <div class="card-info">
+                <span class="tag-pais japao">🇰🇷 Coreia do Sul</span>
+                <h3>Meu secretario perfeito</h3>
+                <span class="genero">Romance • Comédia • Drama</span>
+                <p>Imagina trabalhar com uma pessoa que só enxerga o trabalho? Mas a vida dessa moça muda da água pro vinho tudo porque, após conhecer um secretário de outro mundo, ele mexe com o coração dela e com o nosso ao assistir! Cenas fofas e repletas de emoção. Se você ama romance e drama, precisa assistir! </p>
+                <p class="onde-assistir">📺 <strong>Onde assistir:</strong>Viki</p>
+            </div>
+        </div> 
 
     </main>
-
-    <!-- Seção Chamada pro YouTube -->
-    <section class="secao-youtube">
-        <h3>Quer saber qual o próximo dorama que vai assistir?</h3>
-        <p>
-            Tenho um canal no Youtube onde trago as melhores recomendações de dramas. 
-            Falo sobre dramas chineses, coreanos e japoneses. Então se ama doramas, chega mais! 
-            Também estou no Instagram e Tiktok, onde trago memes divertidíssimos e muito mais conteúdos, viu!
-        </p>
-
-        <button id="btnYoutube" class="btn-youtube">
-            <img src="assets/Youtube_logo.png" alt="Logo YouTube">
-            <span>Apoiar e Inscrever-se</span>
-        </button>
-    </section>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 Camila Dorameira. Todos os direitos reservados.</p>
-    </footer>
 
     <script src="script.js"></script>
 
 </body>
 </html>
- 
-
-
