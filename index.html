@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Doramas: paixão sem limites</title>
+</head>
+
+<body>
+    <!-- Animação das Pétalas no Topo -->
+    <div class="chuva-cerejeira">
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+        <div class="petala"></div>
+    </div>
+
+    <!-- 1. Cabeçalho e Redes Sociais -->
+    <header> 
+        <!-- Item da Esquerda -->
+        <img class="logotipo" src="assets/Cah-dorameira-logo.png" alt="Logo Camila Dorameira">
+
+        <!-- Item da Direita -->
+        <nav class="redes-sociais">
+        <!-- O novo link para a página de indicações -->
+        <a href="indicacoes.html" class="link-camilaflix">🍿 CamilaFlix</a>
+
+            <a href="https://www.instagram.com/camiladorameiraa/" target="_blank"><img src="assets/Instagram_icon.png" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@camiladorameiraa" target="_blank"><img src="assets/Tiktok_logo.png" alt="TikTok"></a>
+            <a href="https://www.youtube.com/@Camiladorameira" target="_blank"><img src="assets/Youtube_logo.png" alt="YouTube"></a>
+        </nav>
+    </header>
+
+    <!-- 2. BANNER PRINCIPAL -->
+    <section class="banner-topo">
+        <div class="conteudo-banner">
+            <h1>Mundo dos Doramas</h1>
+            <p>As melhores indicações e resenhas em um só lugar</p>
+        </div>
+    </section>
+
+    <!-- 3. CONTEÚDO PRINCIPAL DO SITE -->
+    <main>
+
+        <!-- Seção Informativa -->
+        <h1>Por que você precisa conhecer os doramas?</h1>
+
+        <section class="inicio">
+            <div>
+                <h2>Aqui os motivos</h2>
+                <ul class="lista-motivos">
+                    <li><strong>Histórias e personagens inesquecíveis:</strong> Enredos envolventes que te fazem rir, chorar e refletir sobre a vida de um jeito leve e profundo.</li>
+                    <li><strong>Personagens Marcantes:</strong> Conexões reais sobre amizade, superação, respeito e amores que realmente aquecem o coração.</li>
+                    <li><strong>Imersão Cultural:</strong> Uma viagem fascinante pela cultura, culinária e costumes asiáticos sem sair de casa.</li>
+                    <li><strong>Sem Espaço para o Tédio:</strong> Do suspense de tirar o fôlego até a comédia romântica mais fofa, existe um dorama para cada momento.</li>
+                    <li><strong>O Aviso Amigo:</strong> Falo por experiência própria... depois que você dá o primeiro <em>play</em>, <strong>não tem mais volta!</strong> 🍿✨</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Seção Meio -->
+        <section class="meio">
+            <h2>Vem conferir mais doramas que garanto que vai gostar!</h2>
+            <img src="assets/mao-coração-img.png" alt="Símbolo do dorama, coração feito com os dedos">
+        </section>
+
+        <!-- CARD DO DORAMA -->
+        <div class="card-dorama">
+            <img src="assets/assustadoramente-apaixonados-img.webp" alt="Capa do Dorama">
+            <h3>Assustadoramente apaixonado</h3>
+
+            <!-- 1. Botão que abre/fecha a resenha -->
+            <button id="btn-resenha1" class="btn-resenha">📖 Ler Resenha</button>
+
+            <!-- 2. A Resenha (escondida no começo) -->
+            <div id="resenha-texto1" class="resenha-caixa" style="display: none;">
+                <p>
+                  "Uma jovem que vê fantasmas não pode nem dar um aperto de mão, mas acaba conhecendo seu provável novo amor. Além de viver esse romance, ela precisará enfrentar e desvendar a causa de ver esses espíritos. Muito mistério, sustos e um romance que eu tenho certeza que você vai amar!"
+                </p>
+                <a href="https://youtu.be/K_ebwmICMH4?si=bSskff55IDdflfY1" target="_blank" class="link-youtube">
+                  🍿 Quer ver minha opinião completa? Assista ao vídeo no YouTube!
+                </a>
+            </div>
+
+            <!-- 3. Botão de Curtir -->
+            <div class="favoritos-container">
+                <button id="btn-curtir1">❤️</button>
+                <p>Curtidas: <span id="contador1">0</span></p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Seção Chamada pro YouTube -->
+    <section class="secao-youtube">
+        <h3>Quer saber qual o próximo dorama que vai assistir?</h3>
+        <p>
+            Tenho um canal no Youtube onde trago as melhores recomendações de dramas. 
+            Falo sobre dramas chineses, coreanos e japoneses. Então se ama doramas, chega mais! 
+            Também estou no Instagram e Tiktok, onde trago memes divertidíssimos e muito mais conteúdos, viu!
+        </p>
+
+        <button id="btnYoutube" class="btn-youtube">
+            <img src="assets/Youtube_logo.png" alt="Logo YouTube">
+            <span>Apoiar e Inscrever-se</span>
+        </button>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Camila Dorameira. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
