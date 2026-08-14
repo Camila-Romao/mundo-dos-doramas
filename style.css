@@ -237,3 +237,27 @@ header {
     border-radius: 8px;
     display: inline-block;
 }
+
+/* ==================== RODAPÉ (FOOTER) ==================== */
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px;
+    border-top: 1px solid #f1f5f9;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.02);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 4px 0;
+}
+
+footer p strong {
+    color: #a855f7;
+}
+
+footer .coracao {
+    color: #ec4899;
+}
