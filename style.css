@@ -261,14 +261,14 @@ header {
     width: 100%;
 }
 
-.grid-achadinhos h3 {
+.card-achadinhos h3 {
     margin-bottom: 12px;
     font-size: 1.1rem;
     text-align: center;
 }
 
 .card-achadinhos img {
-    width: 100%;
+    width: 250px;
     height: 280px;
     object-fit: cover;
     border-radius: 20px;
@@ -296,7 +296,7 @@ header {
 .card-achadinhos a:hover {
     transform: scale(1.05);
 }
- 
+
 
 /* ==================== RODAPÉ (FOOTER) ==================== */
 footer {
