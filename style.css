@@ -242,10 +242,19 @@ header {
 
 .secao-achadinhos {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 30px 10px;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+div:has(> .card-achadinhoos) {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 30px !important;
+    width: 100% !important;
 }
 
 .achadinhos-cabecalho {
