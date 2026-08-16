@@ -261,7 +261,13 @@ header {
     box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
     transition: all 0.3s ease;
     margin-right: 8px;
-} */
+
+    background-color: #a855f7; /* Roxo fofo */
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+
+    transform: translateY(-2px);
+}
 
 
 /* ==================== RODAPÉ (FOOTER) ==================== */
