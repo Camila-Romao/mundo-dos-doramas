@@ -240,6 +240,28 @@ header {
 
  /* ---- SEÇÃO ACHADINHOS - Botão ---- */
 
+.achadinhos-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.achadinhos-titulo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
+    transition: all 0.3s ease;
+    margin-right: 8px;
+}
 
 
 /* ==================== RODAPÉ (FOOTER) ==================== */
