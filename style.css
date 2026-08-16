@@ -1,13 +1,9 @@
-/* ============================================== */
-/* 1. RESETE GERAL E FONTES                      */
-/* ============================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
 /* ============================================== */
 /* 2. CABEÇALHO E NAVEGAÇÃO                       */
 /* ============================================== */
@@ -53,15 +49,15 @@ header {
 /* ============================================== */
 /* 3. ANIMAÇÃO CHUVA DE CEREJEIRA                 */
 /* ============================================== */
-.chuva-cerejeira {
-    position: absolute;
+#petalas-container {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;
     pointer-events: none;
-    z-index: 10;
+    z-index: 999;
 }
 
 .petala {
@@ -91,40 +87,127 @@ header {
 }
 
 /* ============================================== */
-/* 4. BANNER DO TOPO                              */
+/* TEXTO SOBRE O BANNER                           */
 /* ============================================== */
-.banner-topo {
-    width: 100%;
-    height: 70vh;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/das-cinzas-ao-trono-img.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.texto-banner {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 650px;
+
     text-align: center;
-    color: #ffffff;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
-.conteudo-banner h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    color: #ffffff;
+.texto-banner h1 {
+    margin: 0 0 8px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
 }
 
-.conteudo-banner p {
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+.texto-banner p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: clamp(0.8rem, 1.3vw, 1rem);
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+ 
+
+/* BANNER DO TOPO                              */
+/* ============================================== */
+
+.banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.conteudo-banner {
+    width: 100%;
+    height: clamp(250px, 40vw, 420px);
+    overflow: hidden;
+    position: relative;
+    border-bottom: 4px solid #c464cd;
+}
+
+.conteudo-banner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Degrade sobre a imagem */ 
+.conteudo-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.55)
+    );
+    pointer-events: none;
 }
 
 /* ============================================== */
-/* 5. SEÇÕES DE TEXTO E APRESENTAÇÃO              */
+/* RESPONSIVIDADE DO BANNER                       */
 /* ============================================== */
+
+@media (max-width: 768px) {
+    .conteudo-banner {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo-banner {
+        height: 230px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .texto-banner {
+        left: 6%;
+        right: 6%;
+        bottom: 12%;
+    }
+
+    .texto-banner h1 {
+        font-size: 1.7rem;
+    }
+
+    .texto-banner p {
+        font-size: 0.85rem;
+    }
+}
+
 h1 {
     text-align: center;
     color: #5e3370;
@@ -132,25 +215,12 @@ h1 {
     font-size: 2rem;
 }
 
-.inicio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto 50px auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-}
+/* SEÇÕES DE TEXTO E APRESENTAÇÃO  */ 
 
-.inicio div {
-    max-width: 480px;
-}
-
-.inicio h2 {
-    color: #9477ac;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+.secao-chamativa { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 40px 20px;
 }
 
 .lista-motivos {
@@ -178,30 +248,6 @@ h1 {
 
 .lista-motivos strong {
     color: #5e3370;
-}
-
-/* Seção Meio */
-.meio {
-    text-align: center;
-    background-color: #faf6fc;
-    padding: 40px 20px;
-    margin-bottom: 40px;
-}
-
-.meio h2 {
-    color: #5e3370;
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-}
-
-.meio img {
-    width: 60px;
-    height: 60px;
-    transition: transform 0.3s ease;
-}
-
-.meio img:hover {
-    transform: scale(1.2) rotate(5deg);
 }
 
 /* ============================================== */
@@ -363,37 +409,173 @@ h1 {
     background-color: #fff0f5;
 }
 
+/* ============================================== */
+/* SEÇÃO CAMILAFLIX                               */
+/* ============================================== */
 
-/* botão camilaflix */
+.secao-camilaflix {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+.link-camilaflix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+
+    max-width: 700px;
+}
+
+.link-camilaflix h3 {
+    margin: 0;
+
+    color: #5e3370;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
 
 .link-camilaflix a {
-    color: #ffffff;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: #a855f7; /* Roxo fofo */
-    border-radius: 15px;
-    font-size: 0.9rem;
-    transition: transform 0.2s ease;
-
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    color: #ffffff;
-    font-weight: 600;
-    padding: 8px 18px;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
-    margin-right: 8px;
+    justify-content: center;
 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
-    background: linear-gradient(135deg, #9333ea, #db2777);
+    gap: 6px;
+
+    padding: 9px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        #db2777
+    );
+
+    color: #ffffff;
+
+    border-radius: 15px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 15px rgba(168, 85, 247, 0.30);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .link-camilaflix a:hover {
-    transform: scale(1.15);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(168, 85, 247, 0.40);
 }
 
+@media (max-width: 480px) {
+    .secao-camilaflix {
+        padding: 30px 15px;
+    }
+
+    .link-camilaflix h3 {
+        font-size: 1.1rem;
+    }
+
+    .link-camilaflix a {
+        font-size: 0.85rem;
+        padding: 8px 17px;
+    }
+}
+
+/* ============================================== */
+/* CORREÇÃO DO TEXTO DO BANNER                   */
+/* ============================================== */
+
+.texto-banner {
+    position: absolute;
+
+    left: 50%;
+    top: 60%;
+
+    transform: translate(-50%, -50%);
+
+    width: calc(100% - 40px);
+    max-width: 650px;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.texto-banner h1 {
+    margin: 0 0 8px !important;
+    padding: 0;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-align: center;
+
+    white-space: normal;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.texto-banner p {
+    margin: 0;
+    padding: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+/* ============================================== */
+/* CELULAR                                        */
+/* ============================================== */
+
+@media (max-width: 600px) {
+
+    .texto-banner {
+        left: 50%;
+        top: 62%;
+
+        width: calc(100% - 30px);
+
+        transform: translate(-50%, -50%);
+    }
+
+    .texto-banner h1 {
+        font-size: 1.45rem;
+    }
+
+    .texto-banner p {
+        font-size: 0.75rem;
+    }
+}
 
 /* ============================================== */
 /* 8. RODAPÉ                                      */
