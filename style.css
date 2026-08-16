@@ -46,6 +46,43 @@ header {
     transform: scale(1.15);
 }
 
+/* ====  EFEITO ANIMAÇÕES DE SAKURA ===== */
+#sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Garante que as pétalas não bloqueiem cliques no site */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -20px;
+  background-color: #ffb7c5; /* Cor rosa-cerejeira */
+  border-radius: 15px 0 15px 0; /* Formato de pétala */
+  opacity: 0.85;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+/* Animação de queda e rotação suave */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(40px); /* Balanço para o lado */
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(-20px);
+    opacity: 0.1;
+  }
+}
+
 /* ============================================== */
 /* TEXTO SOBRE O BANNER                           */
 /* ============================================== */
