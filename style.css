@@ -1,63 +1,44 @@
-/* ==================== CONFIGURAÇÕES GERAIS ==================== */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
     font-family: "Poppins", sans-serif;
-    background-color: #f8fafc;
-    color: #1e293b;
-    overflow-x: hidden;
 }
-
-/* ==================== CABEÇALHO ==================== */
-
+/* ============================================== */
+/* 2. CABEÇALHO E NAVEGAÇÃO                       */
+/* ============================================== */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 15px 5%;
-
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 10px 30px;
+    background-color: rgb(196, 100, 205);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logotipo {
-    height: 50px;
-    width: auto;
-    display: block;
-    transition: transform 0.2s ease;
+    width: 45px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .logotipo:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
-
-/* ==================== REDES SOCIAIS ==================== */
 
 .redes-sociais {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
     gap: 15px;
 }
 
 .redes-sociais img {
     width: 28px;
-    height: 28px;
-    object-fit: contain;
+    height: auto;
     transition: transform 0.2s ease;
 }
 
@@ -65,46 +46,222 @@ header {
     transform: scale(1.15);
 }
 
-/* ==================== BOTÃO INÍCIO ==================== */
+/* ============================================== */
+/* TEXTO SOBRE O BANNER                           */
+/* ============================================== */
 
-.btn-inicio {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
+.texto-banner {
+    position: absolute;
+    left: 50%;
+    top: 60%;
 
-    background: linear-gradient(135deg, #a855f7, #ec4899);
-    color: #ffffff;
+    transform: translate(-50%, -50%);
 
-    font-weight: 600;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 650px;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.texto-banner h1 {
+    margin: 0 0 8px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+.texto-banner p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: clamp(0.8rem, 1.3vw, 1rem);
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+ 
+
+/* BANNER DO TOPO                              */
+/* ============================================== */
+
+.banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.conteudo-banner {
+    width: 100%;
+    height: clamp(250px, 40vw, 420px);
+    overflow: hidden;
+    position: relative;
+    border-bottom: 4px solid #c464cd;
+}
+
+.conteudo-banner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Degrade sobre a imagem */ 
+.conteudo-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.55)
+    );
+    pointer-events: none;
+}
+
+
+.texto-banner {
+    position: absolute;
+
+    left: 50%;
+    top: 60%;
+
+    transform: translate(-50%, -50%);
+
+    width: calc(100% - 40px);
+    max-width: 650px;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.texto-banner h1 {
+    margin: 0 0 8px !important;
+    padding: 0;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-align: center;
+
+    white-space: normal;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.texto-banner p {
+    margin: 0;
+    padding: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* ============================================== */
+/* RESPONSIVIDADE DO BANNER                       */
+/* ============================================== */
+
+@media (max-width: 768px) {
+    .conteudo-banner {
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo-banner {
+        height: 230px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .texto-banner {
+        left: 6%;
+        right: 6%;
+        bottom: 12%;
+    }
+
+    .texto-banner h1 {
+        font-size: 1.7rem;
+    }
+
+    .texto-banner p {
+        font-size: 0.85rem;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #5e3370;
+    margin: 40px 20px 20px;
+    font-size: 2rem;
+}
+
+/* SEÇÕES DE TEXTO E APRESENTAÇÃO  */ 
+
+.secao-chamativa { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 40px 20px;
+}
+
+.lista-motivos {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.lista-motivos li {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.lista-motivos li::before {
+    content: "💜";
+    position: absolute;
+    left: 0;
+    top: 0;
     font-size: 0.9rem;
-
-    padding: 8px 18px;
-    border-radius: 20px;
-
-    text-decoration: none;
-
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.25);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-
-    margin-right: 8px;
 }
 
-.btn-inicio:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
-
-    background: linear-gradient(135deg, #9333ea, #db2777);
+.lista-motivos strong {
+    color: #5e3370;
 }
 
-.btn-inicio:active {
-    transform: translateY(0);
-}
 
 /* ==================== TÍTULO DA PÁGINA ==================== */
 
@@ -338,148 +495,51 @@ header {
     box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
 }
 
-/* ==================== RODAPÉ ==================== */
-
-footer {
-    background-color: #ffffff;
-
-    text-align: center;
-
-    padding: 25px 20px;
-
-    margin-top: 50px;
-
-    border-top: 1px solid #f1f5f9;
-
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.02);
-}
-
-footer p {
-    font-size: 0.9rem;
-
-    color: #64748b;
-
-    margin: 4px 0;
-}
-
-footer p strong {
-    color: #a855f7;
-}
-
-footer .coracao {
-    color: #ec4899;
-}
-
-/* ==================== RESPONSIVIDADE ==================== */
-
-/* Tablets */
-
-@media (max-width: 1000px) {
-
-    .grid-doramaflix {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-/* Celulares */
-
-@media (max-width: 768px) {
-
-    header {
-        padding: 12px 20px;
-    }
-
-    .logotipo {
-        height: 45px;
-    }
-
-    .redes-sociais {
-        gap: 8px;
-    }
-
-    .redes-sociais img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .btn-inicio {
-        font-size: 0.8rem;
-        padding: 7px 12px;
-        margin-right: 3px;
-    }
-
-    .titulo-chamativo {
-        margin-top: 30px;
-    }
-
-    .titulo-chamativo h2 {
-        font-size: 1.6rem;
-    }
-
-    .titulo-chamativo p {
-        font-size: 0.9rem;
-    }
-
-    .grid-doramaflix {
-        grid-template-columns: 1fr;
-
-        padding: 15px;
-
-        gap: 20px;
-    }
-
-    .card-dorama > img {
-        height: auto;
-        max-height: 420px;
-    }
-
-    .card-info {
-        padding: 18px;
-    }
-
-}
-
-/* Celulares pequenos */
 
 @media (max-width: 480px) {
-
-    header {
-        padding: 10px 15px;
+    .secao-camilaflix {
+        padding: 30px 15px;
     }
 
-    .logotipo {
-        height: 40px;
+    .link-camilaflix h3 {
+        font-size: 1.1rem;
     }
 
-    .redes-sociais {
-        gap: 6px;
-    }
-
-    .redes-sociais img {
-        width: 23px;
-        height: 23px;
-    }
-
-    .btn-inicio {
-        font-size: 0.75rem;
-        padding: 6px 10px;
-    }
-
-    .titulo-chamativo h2 {
-        font-size: 1.4rem;
-    }
-
-    .card-info h3 {
-        font-size: 1.15rem;
-    }
-
-    .card-info p {
+    .link-camilaflix a {
         font-size: 0.85rem;
+        padding: 8px 17px;
+    }
+}
+                                
+/*   Celular ============================================== */
+
+@media (max-width: 600px) {
+
+    .texto-banner {
+        left: 50%;
+        top: 62%;
+
+        width: calc(100% - 30px);
+
+        transform: translate(-50%, -50%);
     }
 
-    .onde-assistir {
-        font-size: 0.8rem !important;
+    .texto-banner h1 {
+        font-size: 1.45rem;
     }
 
+    .texto-banner p {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================== */
+/* 8. RODAPÉ                                      */
+/* ============================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2b1f33;
+    color: #e0d0ea;
+    font-size: 0.9rem;
 }
