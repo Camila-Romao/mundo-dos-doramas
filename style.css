@@ -19,6 +19,26 @@ header {
     z-index: 100;
 }
 
+@media (max-width: 600px) {
+
+    header {
+        padding: 8px 15px;
+    }
+
+    .logotipo {
+        width: 40px;
+    }
+
+    .redes-sociais {
+        gap: 8px;
+    }
+
+    .redes-sociais img {
+        width: 24px;
+    }
+
+}
+
 .logotipo {
     width: 45px;
     height: auto;
@@ -83,55 +103,64 @@ header {
   }
 }
 
-/* ============================================== */
-/* TEXTO SOBRE O BANNER                           */
-/* ============================================== */
+/* =========================================================
+   TEXTO SOBRE O BANNER
+========================================================= */
 
 .texto-banner {
     position: absolute;
+
     left: 50%;
     top: 60%;
 
     transform: translate(-50%, -50%);
 
-    z-index: 2;
-
-    width: 90%;
+    width: calc(100% - 40px);
     max-width: 650px;
+
+    margin: 0;
+    padding: 0;
 
     text-align: center;
 
     color: rgba(255, 255, 255, 0.9);
 
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+
+    z-index: 2;
 }
 
 .texto-banner h1 {
     margin: 0 0 8px;
+    padding: 0;
 
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.9);
 
-    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    font-size: clamp(1.4rem, 5vw, 2.5rem);
 
     font-weight: 700;
 
     line-height: 1.2;
 
     text-align: center;
+
+    white-space: normal;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .texto-banner p {
     margin: 0;
+    padding: 0;
 
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.78);
 
-    font-size: clamp(0.8rem, 1.3vw, 1rem);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
 
     line-height: 1.5;
 
     text-align: center;
 }
- 
 
 /* BANNER DO TOPO                              */
 /* ============================================== */
@@ -223,45 +252,43 @@ header {
     text-align: center;
 }
 
-
-/* ============================================== */
-/* RESPONSIVIDADE DO BANNER                       */
-/* ============================================== */
+/* =========================================================
+   BANNER RESPONSIVO
+========================================================= */
 
 @media (max-width: 768px) {
+
     .conteudo-banner {
         height: 280px;
     }
+
 }
 
-@media (max-width: 480px) {
-    .conteudo-banner {
-        height: 230px;
-    }
-}
+
+/* =========================================================
+   CELULAR
+========================================================= */
 
 @media (max-width: 600px) {
 
+    .conteudo-banner {
+        height: 240px;
+    }
+
     .texto-banner {
-        left: 6%;
-        right: 6%;
-        bottom: 12%;
+        top: 62%;
+
+        width: calc(100% - 30px);
     }
 
     .texto-banner h1 {
-        font-size: 1.7rem;
+        font-size: 1.45rem;
     }
 
     .texto-banner p {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
-}
 
-h1 {
-    text-align: center;
-    color: #5e3370;
-    margin: 40px 20px 20px;
-    font-size: 2rem;
 }
 
 /* SEÇÕES DE TEXTO E APRESENTAÇÃO  */ 
@@ -367,6 +394,29 @@ h1 {
 
     margin: 0 auto;
     padding: 20px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .grid-doramaflix {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .grid-doramaflix {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 15px;
+    }
 }
 
 /* ==================== CARDS DE DORAMA ==================== */
@@ -530,44 +580,6 @@ h1 {
     transform: translateY(-2px) scale(1.05);
 
     box-shadow: 0 6px 18px rgba(168, 85, 247, 0.4);
-}
-
-
-@media (max-width: 480px) {
-    .secao-camilaflix {
-        padding: 30px 15px;
-    }
-
-    .link-camilaflix h3 {
-        font-size: 1.1rem;
-    }
-
-    .link-camilaflix a {
-        font-size: 0.85rem;
-        padding: 8px 17px;
-    }
-}
-                                
-/*   Celular ============================================== */
-
-@media (max-width: 600px) {
-
-    .texto-banner {
-        left: 50%;
-        top: 62%;
-
-        width: calc(100% - 30px);
-
-        transform: translate(-50%, -50%);
-    }
-
-    .texto-banner h1 {
-        font-size: 1.45rem;
-    }
-
-    .texto-banner p {
-        font-size: 0.75rem;
-    }
 }
 
 /* ============================================== */
